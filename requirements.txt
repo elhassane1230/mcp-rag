@@ -1,0 +1,6 @@
+# Core (offline demo): runs with local LSA embeddings + extractive answers.
+numpy
+scikit-learn
+rank_bm25
+pydantic>=2
+mcp

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcprag"
+version = "0.1.0"
+description = "A semantic RAG engine exposed over the Model Context Protocol (MCP)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["rag", "mcp", "semantic-search", "retrieval", "llm"]
+dependencies = ["numpy", "scikit-learn", "rank_bm25", "pydantic>=2", "mcp"]
+
+[project.optional-dependencies]
+prod = ["voyageai", "openai", "sentence-transformers", "anthropic"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+mcprag-server = "mcprag.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 95
+target-version = "py310"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

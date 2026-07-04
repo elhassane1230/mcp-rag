@@ -1,0 +1,15 @@
+{
+  "//": "Example MCP client config (e.g. Claude Desktop's claude_desktop_config.json). Point 'cwd' at this repo.",
+  "mcpServers": {
+    "nimbus-rag": {
+      "command": "python3",
+      "args": ["-m", "mcprag.server"],
+      "cwd": "/absolute/path/to/mcp-rag",
+      "env": {
+        "PYTHONPATH": "src",
+        "MCPRAG_EMBEDDING_BACKEND": "local",
+        "MCPRAG_GENERATOR_BACKEND": "extractive"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Optional production backends (need network / API keys). Install as needed:
+#   embeddings: voyageai | openai | sentence-transformers
+#   generation: anthropic | openai
+voyageai
+openai
+sentence-transformers
+anthropic

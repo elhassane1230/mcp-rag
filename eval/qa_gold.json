@@ -1,0 +1,22 @@
+{
+  "description": "Gold questions for retrieval evaluation. Each question maps to the source document that contains the answer. Many are phrased with synonyms/paraphrases (not the document's keywords) to test semantic vs lexical retrieval.",
+  "items": [
+    {"question": "How do I change my credentials without downtime?", "gold_source": "authentication.md"},
+    {"question": "What is the recommended way for machine-to-machine calls?", "gold_source": "authentication.md"},
+    {"question": "How long is a login token valid before I must refresh it?", "gold_source": "authentication.md"},
+    {"question": "What happens if I go over my included monthly usage?", "gold_source": "billing.md"},
+    {"question": "How can I stop being charged extra once I hit a spending limit?", "gold_source": "billing.md"},
+    {"question": "Which tier gives me a dedicated success manager?", "gold_source": "billing.md"},
+    {"question": "What error do I get when I send too many requests too fast?", "gold_source": "rate_limits.md"},
+    {"question": "How should my client recover after being throttled?", "gold_source": "rate_limits.md"},
+    {"question": "How do I honour a right-to-be-forgotten request?", "gold_source": "data_retention.md"},
+    {"question": "How long until deleted records disappear from backups?", "gold_source": "data_retention.md"},
+    {"question": "Who gets notified first when there is a total outage?", "gold_source": "incident_runbook.md"},
+    {"question": "How do we switch traffic to the backup region?", "gold_source": "incident_runbook.md"},
+    {"question": "How is information protected while stored on disk?", "gold_source": "security.md"},
+    {"question": "Can staff sign in with their company identity provider?", "gold_source": "security.md"},
+    {"question": "How do I confirm a webhook really came from you?", "gold_source": "webhooks.md"},
+    {"question": "How does the client library avoid duplicate writes on retry?", "gold_source": "sdk_python.md"},
+    {"question": "How do I page through a long list of results?", "gold_source": "sdk_python.md"}
+  ]
+}
