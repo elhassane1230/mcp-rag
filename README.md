@@ -1,4 +1,4 @@
-# mcp-rag — Semantic RAG served over the Model Context Protocol
+# mcp-rag: Semantic RAG served over the Model Context Protocol
 
 A **semantic Retrieval-Augmented Generation** engine, exposed as an **MCP
 server** so any MCP client (Claude Desktop, an IDE agent, …) can search and
@@ -13,12 +13,12 @@ question a knowledge base as a native tool.
                                                     MCP server ─▶ any MCP client
 ```
 
-The whole thing **runs offline out of the box** — local LSA embeddings + an
-extractive, citation-grounded answerer — with **zero API keys or model
+The whole thing **runs offline out of the box**, local LSA embeddings + an
+extractive, citation-grounded answerer, with **zero API keys or model
 downloads**. Production backends (Voyage / OpenAI / sentence-transformers for
 embeddings, Anthropic / OpenAI for generation) are a one-line config switch.
 
-**Demo corpus:** a self-contained fictional SaaS knowledge base ("Nimbus" — a
+**Demo corpus:** a self-contained fictional SaaS knowledge base ("Nimbus", a
 cloud data platform): authentication, billing, rate limits, data retention,
 security, incident runbook, webhooks, SDK. Nothing copyrighted; every answer is
 traceable to a source.
@@ -36,11 +36,11 @@ A: When you exceed your included quota, Nimbus does not cut off your service;
    instead, additional usage is billed as overage at the metered rate
    ($0.50 per extra 10k calls, $0.10 per extra GB). [1]
 Sources:
-   [1] billing.md — Billing and quotas
+   [1] billing.md, Billing and quotas
 ```
 
 Note there's **no keyword overlap** between "go over my included usage" and
-"exceed your quota / overage" — that match is *semantic*, which is the point.
+"exceed your quota / overage", that match is *semantic*, which is the point.
 
 ---
 
@@ -70,7 +70,7 @@ in a client with [`mcp.json`](mcp.json).
 | **Hybrid (RRF fusion)** | 0.941 | **0.941** |
 
 All three usually *find* the right document on this clean corpus, but **hybrid
-ranks it highest most consistently** — fusing dense (semantic) and sparse
+ranks it highest most consistently**, fusing dense (semantic) and sparse
 (keyword) retrieval is a tuning-free win, and the paraphrased questions are
 exactly where pure keyword search ranks worse.
 
@@ -102,7 +102,7 @@ pip install -r requirements-prod.txt
 export MCPRAG_EMBEDDING_BACKEND=voyage   VOYAGE_API_KEY=...
 export MCPRAG_GENERATOR_BACKEND=anthropic ANTHROPIC_API_KEY=...
 ```
-No code changes — the retriever and server are backend-agnostic.
+No code changes, the retriever and server are backend-agnostic.
 
 ---
 
@@ -125,7 +125,7 @@ tests/                 retrieval, answers, evaluation, MCP protocol
 
 ## Design notes
 - **Grounded by construction.** The offline generator only emits sentences taken
-  verbatim from retrieved chunks, each with a citation — it cannot hallucinate.
+  verbatim from retrieved chunks, each with a citation, it cannot hallucinate.
 - **Hybrid retrieval.** Reciprocal Rank Fusion of dense + sparse rankings needs
   no weight tuning and is robust across query types.
 - **Backend-agnostic.** Embeddings and generation are pluggable Protocols;
